@@ -22,11 +22,15 @@
     <!-- CARD FORM -->
     <div class="card shadow-sm border-0">
         <div class="card-body p-4">
-
+            <?php if(isset($_GET['val'])){ ?>
+                        <p class="text-success text-center"><?= $_GET['val'] ?></p>
+                <?php } ?>
             <form method="POST" action="../modules/auth/AuthController.php">
 
                 <input type="hidden" name="action" value="login">
-
+                <?php if(isset($_GET['err'])){ ?>
+                        <p class="text-danger text-center"><?= $_GET['err'] ?></p>
+                <?php } ?>
                 <!-- USERNAME -->
                 <div class="mb-3">
                     <label class="form-label">Pseudo</label>

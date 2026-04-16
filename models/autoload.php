@@ -1,10 +1,13 @@
 <?php
 function autoload($classname)
 {
-  if (file_exists($file = 'models/' . $classname . '.php'))
-  {
-    require $file;
-  }
+    $path = __DIR__ . '/' . $classname . '.php';
+    var_dump($path);
+
+    if (file_exists($path))
+    {
+        require $path;
+    }
 }
 
 spl_autoload_register('autoload');

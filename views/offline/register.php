@@ -24,10 +24,12 @@
 
         <div class="card-body p-4">
 
-            <form method="POST" action="../modules/auth/AuthController.php">
+            <form method="POST" action="php/actions/register/registerAction.php">
 
                 <input type="hidden" name="action" value="register">
-
+                <?php if(isset($_GET['err'])){ ?>
+                        <p class="text-danger text-center"><?= $_GET['err'] ?></p>
+                <?php } ?>
                 <!-- USERNAME -->
                 <div class="mb-3">
                     <label class="form-label">Pseudo</label>
