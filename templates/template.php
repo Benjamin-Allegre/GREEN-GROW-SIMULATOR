@@ -39,12 +39,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php">Accueil</a>
                             </li>
-                            <?php if (!isset($_SESSION['user'])): ?>
+                            <?php if (!isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="presentation.php">Présentation</a>
                                 </li>
                             <?php endif; ?>
-                            <?php if (isset($_SESSION['user'])): ?>
+                            <?php if (isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="games/immobilier.php">Immobilier</a>
                                 </li>
@@ -63,10 +63,10 @@
 
                         <!-- RIGHT AUTH -->
                         <div class="d-flex align-items-center">
-                            <?php if (isset($_SESSION['user'])): ?>
+                            <?php if (isset($_SESSION['id'])): ?>
 
                                 <span class="text-white me-3">
-                                    👤 <?= htmlspecialchars($_SESSION['user']['username']) ?>
+                                    👤 <?= htmlspecialchars($_SESSION['username']) ?>
                                 </span>
 
                                 <form method="POST" action="../modules/auth/AuthController.php" class="d-inline">

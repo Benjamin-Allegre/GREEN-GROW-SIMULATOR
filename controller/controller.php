@@ -17,4 +17,14 @@
         require_once('views/offline/login.php');
     }
 
+    function game($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        // récupération de l'user
+        $user = $accountsManager->getAccount($_SESSION['id']);
+
+        require_once('views/online/game.php');
+    }
+
 ?>

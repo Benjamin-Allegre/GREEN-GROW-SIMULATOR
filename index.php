@@ -24,6 +24,14 @@
             {
                 login();
             }
+            elseif($_GET['action'] === 'game')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    game($db);
+                }
+            }
         }
     }
     catch(Exception $e)

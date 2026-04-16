@@ -13,6 +13,9 @@
 
             return $q->fetchColumn() == 0;
         }
+        
+        
+
         public function addAccount(Accounts $user)
         {
             $q = $this->db->prepare('

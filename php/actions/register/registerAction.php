@@ -35,7 +35,7 @@
     $accountsManager->addAccount($user);
 
     // new userQuests
-    // récupération de l'id user pour ajouter la quetes de départ
+    // récupération de l'user pour ajouter la quetes de départ
     $user = $accountsManager->getAccount($username);
 
     $userQuests = new UsersQuests(['userId' => $user->id(), 'questId' => 1]);

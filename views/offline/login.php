@@ -25,7 +25,7 @@
             <?php if(isset($_GET['val'])){ ?>
                         <p class="text-success text-center"><?= $_GET['val'] ?></p>
                 <?php } ?>
-            <form method="POST" action="../modules/auth/AuthController.php">
+            <form method="POST" action="php/actions/login/loginAction.php">
 
                 <input type="hidden" name="action" value="login">
                 <?php if(isset($_GET['err'])){ ?>
