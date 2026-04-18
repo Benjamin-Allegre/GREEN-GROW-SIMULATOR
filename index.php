@@ -40,6 +40,10 @@
                     quest($db);
                 }
             }
+            elseif($_GET['action'] === 'saveMarque')
+            {
+                saveMarque($db);
+            }
         }
     }
     catch(Exception $e)

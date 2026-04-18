@@ -48,5 +48,21 @@
                 return new Accounts($q-> fetch(PDO::FETCH_ASSOC));
             }
         }
+        public function marqueExists($marque)
+        {
+            $q = $this->db->prepare("SELECT id FROM users WHERE marque = :marque");
+            $q->execute([':marque' => $marque]);
+
+            return $q->fetch() !== false;
+        }
+
+        public function updateMarque($id, $marque)
+        {
+            $q = $this->db->prepare("UPDATE users SET marque = :marque WHERE id = :id");
+            $q->execute([
+                ':marque' => $marque,
+                ':id' => $id
+            ]);
+        }
     }
 ?>

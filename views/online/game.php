@@ -118,22 +118,6 @@
 <!-- Lit le contenu courant du tampon de sortie puis l'efface -->
 <?php $content = ob_get_clean(); ?>
 
-<script>
-function openQuest(element) {
-    const id = element.dataset.id;
-
-    fetch('index.php?action=quest&id=' + id)
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('questContent').innerHTML = html;
-
-            const modal = new bootstrap.Modal(
-                document.getElementById('questModal')
-            );
-
-            modal.show();
-        });
-}
-</script>
+<script src="js/quests.js"></script>
 <!-- require (template générale site) -->
 <?php require_once('templates/template.php'); ?>

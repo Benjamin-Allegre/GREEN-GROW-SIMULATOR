@@ -30,11 +30,38 @@
     }
     function quest($db)
     {
+        $accountsManager = new AccountsManager($db);
         $usersQuestsManager = new UsersQuestsManager($db);
 
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        
         $id = (int) $_GET['id'];
 
-        echo $usersQuestsManager->getQuestContentById($id);
+        echo $usersQuestsManager->getQuestContentById($id, $user);
+        exit;
+    }
+    function saveMarque($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $userId = $_SESSION['id'];
+        $marque = trim($_POST['marque']);
+
+        if (empty($marque)) {
+            echo "Nom invalide";
+            exit;
+        }
+
+        // vérifie si existe déjà
+        if ($accountsManager->marqueExists($marque)) {
+            echo "Cette marque existe déjà";
+            exit;
+        }
+
+        // update user
+        $accountsManager->updateMarque($userId, $marque);
+
+        echo "OK";
         exit;
     }
 ?>
