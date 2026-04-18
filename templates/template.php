@@ -69,12 +69,7 @@
                                     👤 <?= htmlspecialchars($_SESSION['username']) ?>
                                 </span>
 
-                                <form method="POST" action="../modules/auth/AuthController.php" class="d-inline">
-                                    <input type="hidden" name="action" value="logout">
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        Déconnexion
-                                    </button>
-                                </form>
+                                <a href="index.php?action=logout" class="btn btn-success btn-lg me-2">Deconnexion</a>
 
                             <?php else: ?>
 

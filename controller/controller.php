@@ -17,6 +17,14 @@
         require_once('views/offline/login.php');
     }
 
+    function logout(){
+        session_start();
+        session_destroy();
+
+        header("Location: index.php");
+        exit;
+    }
+
     function game($db)
     {
         $accountsManager = new AccountsManager($db);

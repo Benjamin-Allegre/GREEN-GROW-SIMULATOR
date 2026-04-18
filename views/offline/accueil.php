@@ -24,11 +24,11 @@
         </p>
 
         <div class="mt-4">
-            <a href="login.php" class="btn btn-success btn-lg me-2">
+            <a href="offline/login.php" class="btn btn-success btn-lg me-2">
                 ▶ Jouer
             </a>
 
-            <a href="register.php" class="btn btn-outline-success btn-lg">
+            <a href="offline/register.php" class="btn btn-outline-success btn-lg">
                 Créer un compte
             </a>
         </div>

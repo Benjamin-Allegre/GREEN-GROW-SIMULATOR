@@ -24,6 +24,10 @@
             {
                 login();
             }
+            elseif($_GET['action'] === 'logout')
+            {
+                logout();
+            }
             elseif($_GET['action'] === 'game')
             {
                 if(empty($_SESSION['username'])){
