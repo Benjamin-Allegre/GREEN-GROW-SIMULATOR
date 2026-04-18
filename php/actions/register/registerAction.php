@@ -4,6 +4,8 @@
 
     $accountsManager = new AccountsManager($db);
     $usersQuestsManager = new UsersQuestsManager($db);
+    $usersSuccessManager = new UsersSuccessManager($db);
+
 
     // traitement formulaire
     $username = htmlspecialchars($_POST['username']);
@@ -40,6 +42,9 @@
 
     $userQuests = new UsersQuests(['userId' => $user->id(), 'questName' => '01.Bienvenue']);
     $usersQuestsManager->addUserQuest($userQuests);
+
+    $userSuccess = new UsersSuccess(['userID' => $user->id(), 'successName' => '01.tutoriel']);
+    $usersSuccessManager->addUserSuccess($userSuccess);
 
     // envoyer a la page connexion suite a l'inscription
     $succesRegister = 'Félicitation votre compte a bien été créer, connecter vous pour commencer a jouer.';

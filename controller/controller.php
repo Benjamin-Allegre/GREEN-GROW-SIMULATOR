@@ -21,10 +21,11 @@
     {
         $accountsManager = new AccountsManager($db);
         $usersQuestsManager = new UsersQuestsManager($db);
+        $usersSuccessManager = new UsersSuccessManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
         $questsActive = $usersQuestsManager->getAllQuestsActive($_SESSION['id']);
-
+        $successActive = $usersSuccessManager->getAllSuccessActive($_SESSION['id']);
 
         require_once('views/online/game.php');
     }

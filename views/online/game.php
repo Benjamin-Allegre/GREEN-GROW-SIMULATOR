@@ -66,11 +66,17 @@
             <div class="card p-3">
                 <h5>📜 Succès en cours</h5>
 
-                <?php foreach ($quests as $q): ?>
-                    <div class="border-bottom py-2">
-                        <strong><?= $q['name'] ?></strong><br>
-                        <small><?= $q['progress'] ?> / <?= $q['goal'] ?></small>
+                <?php foreach(array_slice($successActive, 0, 5) as $successActive): ?>
+
+                    <div 
+                        class="quest-item mb-2 p-2 border rounded"
+                        data-id="<?= $successActive->id(); ?>"
+                        onclick="openQuest(this)"
+                        style="cursor:pointer;"
+                    >
+                        <?= htmlspecialchars($successActive->success_name()); ?>
                     </div>
+
                 <?php endforeach; ?>
 
                 <a href="" class="btn btn-success btn-sm">Quêtes & Succès</a>
