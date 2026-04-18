@@ -1,6 +1,6 @@
 <?php
     class Accounts{
-        protected $id, $username, $password, $role, $created_at, $money, $xp, $level;
+        protected $id, $username, $marque, $password, $role, $created_at, $money, $xp, $level;
 
         public function __construct(array $donnees)
         {
@@ -10,17 +10,16 @@
 
         public function hydrate(array $donnees)
         {
-            
             foreach ($donnees as $key => $value)
-                
             {
-                $method = 'set'.ucfirst($key);
+                // snake_case → camelCase
+                $key = str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+                $method = 'set'.$key;
 
                 if (method_exists($this, $method))
                 {
                     $this->$method($value);
                 }
-                
             }
         }
 
@@ -28,6 +27,7 @@
 
         public function id(){ return $this->id; }
         public function username(){ return $this->username; }
+        public function marque(){ return $this->marque; }
         public function password(){ return $this->password; }
         public function role(){ return $this->role; }
         public function created_at(){ return $this->created_at; }
@@ -47,6 +47,13 @@
             if(is_string($username))
             {
                 $this->username = $username;
+            }
+        }
+        public function setMarque($marque)
+        {
+            if(is_string($marque))
+            {
+                $this->marque = $marque;
             }
         }
         public function setPassword($password)
@@ -83,7 +90,7 @@
             $xp = (int) $xp;
             $this->xp = $xp;
         }
-        public function setlevel($level)
+        public function setLevel($level)
         {
             $level = (int) $level;
             $this->level = $level;

@@ -32,6 +32,14 @@
                     game($db);
                 }
             }
+            elseif($_GET['action'] === 'quest') // ✅ AJOUT IMPORTANT
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    quest($db);
+                }
+            }
         }
     }
     catch(Exception $e)

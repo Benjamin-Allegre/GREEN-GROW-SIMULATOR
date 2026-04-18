@@ -28,17 +28,38 @@
         <div class="col-md-6">
             <div class="card p-3">
                 <h5>📜 Quêtes en cours</h5>
+                
+                    <?php foreach(array_slice($questsActive, 0, 5) as $questActive): ?>
 
-                <?php foreach ($quests as $q): ?>
-                    <div class="border-bottom py-2">
-                        <strong><?= $q['name'] ?></strong><br>
-                        <small><?= $q['progress'] ?> / <?= $q['goal'] ?></small>
-                    </div>
-                <?php endforeach; ?>
+                        <div 
+                            class="quest-item mb-2 p-2 border rounded"
+                            data-id="<?= $questActive->id(); ?>"
+                            onclick="openQuest(this)"
+                            style="cursor:pointer;"
+                        >
+                            <?= htmlspecialchars($questActive->quest_name()); ?>
+                        </div>
 
-                <a href="" class="btn btn-success btn-sm">Quêtes & Succès</a>
+                    <?php endforeach; ?>
+                
+                <a href="" class="btn btn-success btn-sm">Quêtes</a>
             </div> 
-            
+            <!-- ✅ MODAL (UNE SEULE FOIS) -->
+            <div class="modal fade" id="questModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                            <h5 class="modal-title">Détail de la quête</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            
+                        </div>
+
+                        <div class="modal-body" id="questContent"></div>
+
+                    </div>
+                </div>
+                </div>
         </div>
 
          <div class="col-md-6">
@@ -97,5 +118,22 @@
 <!-- Lit le contenu courant du tampon de sortie puis l'efface -->
 <?php $content = ob_get_clean(); ?>
 
+<script>
+function openQuest(element) {
+    const id = element.dataset.id;
+
+    fetch('index.php?action=quest&id=' + id)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('questContent').innerHTML = html;
+
+            const modal = new bootstrap.Modal(
+                document.getElementById('questModal')
+            );
+
+            modal.show();
+        });
+}
+</script>
 <!-- require (template générale site) -->
 <?php require_once('templates/template.php'); ?>

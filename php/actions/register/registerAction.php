@@ -31,14 +31,14 @@
     $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
     // new User
-    $user = new Accounts(['username' => $username, 'password' => $passwordHash, 'money' => 20000, 'xp' => 0, 'level' => 0]);
+    $user = new Accounts(['username' => $username, 'password' => $passwordHash, 'money' => 0, 'xp' => 0, 'level' => 0]);
     $accountsManager->addAccount($user);
 
     // new userQuests
     // récupération de l'user pour ajouter la quetes de départ
     $user = $accountsManager->getAccount($username);
 
-    $userQuests = new UsersQuests(['userId' => $user->id(), 'questId' => 1]);
+    $userQuests = new UsersQuests(['userId' => $user->id(), 'questName' => '01.Bienvenue']);
     $usersQuestsManager->addUserQuest($userQuests);
 
     // envoyer a la page connexion suite a l'inscription

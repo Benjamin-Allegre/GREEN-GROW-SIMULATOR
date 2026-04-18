@@ -20,11 +20,21 @@
     function game($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersQuestsManager = new UsersQuestsManager($db);
 
-        // récupération de l'user
         $user = $accountsManager->getAccount($_SESSION['id']);
+        $questsActive = $usersQuestsManager->getAllQuestsActive($_SESSION['id']);
+
 
         require_once('views/online/game.php');
     }
+    function quest($db)
+    {
+        $usersQuestsManager = new UsersQuestsManager($db);
 
+        $id = (int) $_GET['id'];
+
+        echo $usersQuestsManager->getQuestContentById($id);
+        exit;
+    }
 ?>

@@ -10,27 +10,26 @@
 
         public function hydrate(array $donnees)
         {
-            
             foreach ($donnees as $key => $value)
-                
             {
-                $method = 'set'.ucfirst($key);
+                // snake_case → camelCase
+                $key = str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+                $method = 'set'.$key;
 
                 if (method_exists($this, $method))
                 {
                     $this->$method($value);
                 }
-                
             }
         }
 
         // getter
 
         public function id(){ return $this->id; }
-        public function userId(){ return $this->user_id; }
-        public function questName(){ return $this->quest_name; }
+        public function user_id(){ return $this->user_id; }
+        public function quest_name(){ return $this->quest_name; }
         public function status(){ return $this->status; }
-        public function createdAt(){ return $this->created_at; }
+        public function created_at(){ return $this->created_at; }
 
         // setter
 
@@ -44,7 +43,7 @@
             $user_id = (int) $user_id;
             $this->user_id = $user_id;
         }
-        public function setQuestId($quest_name)
+        public function setQuestName($quest_name)
         {
             if(is_string($quest_name))
             {
