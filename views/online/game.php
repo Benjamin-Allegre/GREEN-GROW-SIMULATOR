@@ -25,65 +25,71 @@
     <!-- MODULES QUEST -->
     <div class="row g-3">
 
-        <div class="col-md-4">
-             <h4>📜 Quêtes en cours</h4>
-
-            <?php foreach ($quests as $q): ?>
-                <div class="border-bottom py-2">
-                    <strong><?= $q['name'] ?></strong><br>
-                    <small><?= $q['progress'] ?> / <?= $q['goal'] ?></small>
-                </div>
-            <?php endforeach; ?>
-
-            <a href="quests.php" class="btn btn-sm btn-primary mt-2">
-                Voir toutes les quêtes
-            </a>
-        </div>
-
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card p-3">
-                <h5>🛒 Shop</h5>
-                <p>Achete graines et matériel.</p>
-                <button class="btn btn-secondary btn-sm" disabled>À venir</button>
-            </div>
+                <h5>📜 Quêtes en cours</h5>
+
+                <?php foreach ($quests as $q): ?>
+                    <div class="border-bottom py-2">
+                        <strong><?= $q['name'] ?></strong><br>
+                        <small><?= $q['progress'] ?> / <?= $q['goal'] ?></small>
+                    </div>
+                <?php endforeach; ?>
+
+                <a href="" class="btn btn-success btn-sm">Quêtes & Succès</a>
+            </div> 
+            
         </div>
 
-        <div class="col-md-4">
+         <div class="col-md-6">
             <div class="card p-3">
-                <h5>📊 Marché</h5>
-                <p>Vends tes récoltes.</p>
-                <button class="btn btn-secondary btn-sm" disabled>À venir</button>
-            </div>
-        </div>
+                <h5>📜 Succès en cours</h5>
 
+                <?php foreach ($quests as $q): ?>
+                    <div class="border-bottom py-2">
+                        <strong><?= $q['name'] ?></strong><br>
+                        <small><?= $q['progress'] ?> / <?= $q['goal'] ?></small>
+                    </div>
+                <?php endforeach; ?>
+
+                <a href="" class="btn btn-success btn-sm">Quêtes & Succès</a>
+            </div> 
+            
+        </div>
     </div>
     <!-- MODULES FUTURS -->
     <div class="row g-3">
-
-        <div class="col-md-4">
+        <h5>🌾 Exploitations</h5>
+        <div class="col-md-3">
             <div class="card p-3">
-                <h5>🌾 Ferme</h5>
-                <p>Gère tes cultures et plantations.</p>
-                <a href="farm.php" class="btn btn-success btn-sm">Accéder</a>
+                <h5>🌾 culture Extérieur</h5>
+                <p>Gère tes fermes cannabicole extérieur</p>
+                <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card p-3">
-                <h5>🛒 Shop</h5>
+                <h5>🌾 culture Intérieur</h5>
                 <p>Achete graines et matériel.</p>
-                <button class="btn btn-secondary btn-sm" disabled>À venir</button>
+                <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card p-3">
                 <h5>📊 Marché</h5>
                 <p>Vends tes récoltes.</p>
-                <button class="btn btn-secondary btn-sm" disabled>À venir</button>
+                <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
-
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h5>📊 Marché</h5>
+                <p>Vends tes récoltes.</p>
+                <a href="" class="btn btn-success btn-sm">Accéder</a>
+            </div>
+        </div>
     </div>
 
 </div>

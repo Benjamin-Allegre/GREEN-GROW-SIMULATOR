@@ -1,6 +1,6 @@
 <?php
     class UsersQuests {
-        protected $id, $user_id, $quest_id, $status, $created_at;
+        protected $id, $user_id, $quest_name, $status, $created_at;
 
         public function __construct(array $donnees)
         {
@@ -28,7 +28,7 @@
 
         public function id(){ return $this->id; }
         public function userId(){ return $this->user_id; }
-        public function questId(){ return $this->quest_id; }
+        public function questName(){ return $this->quest_name; }
         public function status(){ return $this->status; }
         public function createdAt(){ return $this->created_at; }
 
@@ -44,10 +44,12 @@
             $user_id = (int) $user_id;
             $this->user_id = $user_id;
         }
-        public function setQuestId($quest_id)
+        public function setQuestId($quest_name)
         {
-            $quest_id = (int) $quest_id;
-            $this->quest_id = $quest_id;
+            if(is_string($quest_name))
+            {
+                $this->quest_name = $quest_name;
+            }
         }
         public function setStatus($status)
         {
