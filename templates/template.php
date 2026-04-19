@@ -41,19 +41,21 @@
                             </li>
                             <?php if (!isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="presentation.php">Présentation</a>
+                                    <a class="nav-link" href="offline/presentation.php">Présentation</a>
                                 </li>
                             <?php endif; ?>
                             <?php if (isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="games/immobilier.php">Immobilier</a>
+                                    <a class="nav-link" href="online/immobilier.php">Immobilier</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="games/fournisseur.php">
                                         Fournisseur</a>
                                 </li>
-
+                                <li class="nav-item">
+                                    
+                                </li>
                             <?php endif; ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="faq.php">FAQ</a>
