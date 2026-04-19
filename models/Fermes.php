@@ -1,6 +1,6 @@
 <?php
     class Fermes {
-        protected $id, $nom, $type, $capacite, $prix;
+        protected $id, $nom, $description, $type, $capacite, $prix;
 
         public function __construct(array $donnees)
         {
@@ -27,6 +27,7 @@
 
         public function id(){ return $this->id; }
         public function nom(){ return $this->nom; }
+        public function description(){ return $this->description; }
         public function type(){ return $this->type; }
         public function capacite(){ return $this->capacite; }
         public function prix(){ return $this->prix; }
@@ -43,6 +44,13 @@
             if(is_string($nom))
             {
                 $this->nom = $nom;
+            }
+        }
+        public function setDescription($description)
+        {
+            if(is_string($description))
+            {
+                $this->description = $description;
             }
         }
         public function setType($type)

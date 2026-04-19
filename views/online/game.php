@@ -1,5 +1,5 @@
 <?php
-    $title = 'Connexion';
+    $title = 'Game';
     $content_css = '';
     $content_js = '';
 ?>

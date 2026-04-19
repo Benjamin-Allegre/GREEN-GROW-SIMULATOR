@@ -25,7 +25,7 @@
         }
 
         public function getAllSuccessActive($userId){
-            $questsActive = [];
+            $successActive = [];
             $q = $this->db->prepare('SELECT id, user_id, success_name, status, created_at FROM user_success WHERE status = "active" AND user_id = :userId');
             $q->execute([':userId' => $userId]);
 

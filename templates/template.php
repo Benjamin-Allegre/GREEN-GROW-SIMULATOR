@@ -21,9 +21,9 @@
                 <div class="container">
 
                     <!-- BRAND -->
-                    <a class="navbar-brand fw-bold" href="index.php">
-                        <img src="images/Logo-GreenGrow-Simulator.png" alt="Logo GreenGrow Simulator" width="250" height="150">
-                    </a>
+                    
+                    <img src="images/Logo-GreenGrow-Simulator.png" alt="Logo GreenGrow Simulator" width="250" height="150">
+              
 
                     <!-- BURGER MOBILE -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGreenGrow">
@@ -35,23 +35,25 @@
 
                         <!-- LEFT MENU -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php">Accueil</a>
-                            </li>
                             <?php if (!isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="offline/presentation.php">Présentation</a>
+                                    <a class="nav-link" href="index.php">Accueil</a>
+                                </li>
+                            
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?action=presentation">Présentation</a>
                                 </li>
                             <?php endif; ?>
                             <?php if (isset($_SESSION['id'])): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="online/immobilier.php">Immobilier</a>
+                                    <a class="nav-link" href="index.php?action=game">Bureau</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?action=immobilier">Immobilier</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="games/fournisseur.php">
-                                        Fournisseur</a>
+                                    <a class="nav-link" href="index.php?action=fournisseurs">Fournisseur</a>
                                 </li>
                                 <li class="nav-item">
                                     

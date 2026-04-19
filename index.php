@@ -16,6 +16,9 @@
             {
                 accueil();
             }
+            elseif($_GET['action'] === 'presentation'){
+                presentation();
+            }
             elseif($_GET['action'] === 'register')
             {
                 register();
@@ -34,6 +37,22 @@
 					accueil();
 				}else{
                     game($db);
+                }
+            }
+            elseif($_GET['action'] === 'immobilier')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    immobilier($db);
+                }
+            }
+            elseif($_GET['action'] === 'fournisseurs')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    fournisseurs($db);
                 }
             }
             elseif($_GET['action'] === 'quest') // ✅ AJOUT IMPORTANT

@@ -6,7 +6,10 @@
     {
         require_once('views/offline/accueil.php');
     }
-
+    function presentation()
+    {
+        require_once('views/offline/presentation.php');
+    }
     function register()
     {
         require_once('views/offline/register.php');
@@ -36,6 +39,33 @@
         $successActive = $usersSuccessManager->getAllSuccessActive($_SESSION['id']);
 
         require_once('views/online/game.php');
+    }
+    function immobilier($db)
+    {
+        $accountsManager = new AccountsManager($db);
+        $fermesManager = new FermesManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        $fermes = $fermesManager->getAllFerme();
+
+        require_once('views/online/immobilier.php');
+    }
+    function fournisseurs($db)
+    {
+        $accountsManager = new AccountsManager($db);
+        $grainesExtManager = new GraineExtManager($db); 
+        // $grainesIntManager = new GraineIntManager($db); 
+        // $grainesHydroManager = new GraineHydroManager($db); 
+        // $grainesAeroManager = new GraineAeroManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        // toutes les graines du jeu achetable 
+        $grainesExt = $grainesExtManager->getAll();
+        // $grainesInt = $grainesIntManager->getAll();
+        // $grainesHydro = $grainesHydroManager->getAll();
+        // $grainesAero = $grainesAeroManager->getAll();
+
+        require_once('views/online/fournisseurs.php');
     }
     function quest($db)
     {
