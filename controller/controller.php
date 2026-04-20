@@ -47,6 +47,9 @@
 
         $user = $accountsManager->getAccount($_SESSION['id']);
         $fermes = $fermesManager->getAllFerme();
+        
+
+        
 
         require_once('views/online/immobilier.php');
     }
@@ -54,10 +57,14 @@
     {
         $accountsManager = new AccountsManager($db);
         $fermesManager = new FermesManager($db);
+        $paysManager = new PaysManager($db);
         $usersFermesManager = new UsersFermesManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
         $ferme = $fermesManager->getFerme($idFerme);
+        $pays = $paysManager->getAllPays();
+        $usersFermes = $usersFermesManager->getAllUsersFermes($_SESSION['id']);
+        var_dump($usersFermes);
 
         require_once('views/online/achatFerme.php');
     }

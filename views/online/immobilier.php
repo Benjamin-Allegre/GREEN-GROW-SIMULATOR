@@ -43,7 +43,7 @@
                                 <div class="card p-3 text-center h-100">
 
                                     <h5><?= $ferme->nom() ?></h5>
-
+                                    <h6><?= $ferme->capacite() ?> Plants</h6>
                                     <img 
                                         src="images/cultureExterieur/<?= $ferme->id() ?>.png" 
                                         alt="<?= $ferme->nom() ?>" 
@@ -60,7 +60,7 @@
                                         </button>
 
                                     <?php else: ?>
-
+                                        
                                         <a href="index.php?action=achatFerme&idAchat=<?= $ferme->id() ?>" 
                                         class="btn btn-success btn-sm">
                                             Acheter pour <?= $ferme->prix() ?> GC
@@ -77,29 +77,7 @@
                     <?php endforeach; ?>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                <?php foreach($fermes as $ferme): 
-                            if($ferme->type() === 'Intérieur'){ ?>
-                                <div class="card p-3 text-center">
-                                    <h5><?=  $ferme->nom() ?></h5>
-                                    <div class="row">
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-6">
-                                            <img src="images/cultureExterieur/<?= $ferme->id()  ?>.png" alt="<?=  $ferme->nom() ?>" width="250" height="150">
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                    </div>
-                                    
-
-                                    <p><?=  $ferme->description() ?></p>
-
-                                    <?php if($user->money() < $ferme->prix()){ ?>
-                                        <a href="" class="btn btn-success btn-sm disabled">Il vous manque pour acheter cette ferme <?= $ferme->prix() - $user->money() ?> GC</a>
-                                    <?php }else{ ?>
-                                        <a href="" class="btn btn-success btn-sm">Acheter pour <?=  $ferme->prix() ?></a>
-                                    <?php } ?>
-                                </div>
-                        <?php  }
-                        endforeach; ?>
+                
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
             <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>

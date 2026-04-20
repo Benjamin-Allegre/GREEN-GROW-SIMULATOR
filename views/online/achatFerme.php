@@ -31,6 +31,19 @@
                 <p class="card-text"><?= $ferme->description() ?></p>
                 <p class="card-text"><?= $ferme->prix() ?>  Green Coin</p>
             </div>
+            <form id="acheterFerme" action="php/" method="POST">
+                <label for="pays">Choisissez un pays :</label>
+                <select id="pays" name="pays">
+                    <?php foreach($pays as $p): 
+                                ?>
+                            <option value="<?= $pays->id() ?>"><?= $pays->nom() ?></option>
+                    <?php endforeach; ?>
+                
+                </select>
+				
+        
+			</form>
+			<button form="acheterFerme" type="submit" class="btn button">Acheter</button>
         </div>
         <div class="col-md-3"></div>
     </div>

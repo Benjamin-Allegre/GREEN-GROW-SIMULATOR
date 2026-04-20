@@ -1,6 +1,6 @@
 <?php
     class UsersFermes{
-        protected $id, $user_id, $pays_id, $ferme_id, $type;
+        protected $id, $user_id, $pays_id, $ferme_id, $type, $created_at;
 
         public function __construct(array $donnees)
         {
@@ -30,6 +30,7 @@
         public function pays_id(){ return $this->pays_id; }
         public function ferme_id(){ return $this->ferme_id; }
         public function type(){ return $this->type; }
+        public function created_at(){ return $this->created_at; }
 
         //setter
 
@@ -61,6 +62,13 @@
                 {
                     $this->type = $type;
                 }
+            }
+        }
+        public function setCreatedAt($created_at)
+        {
+            if (is_string($created_at) || is_int($created_at))
+            {
+                $this->created_at = $created_at;
             }
         }
     }
