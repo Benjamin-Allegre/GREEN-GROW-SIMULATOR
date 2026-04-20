@@ -47,6 +47,15 @@
                     immobilier($db);
                 }
             }
+            elseif($_GET['action'] === 'achatFerme')
+            {
+                if(empty($_SESSION['username'])){
+                    accueil();
+                }else{
+                    $idFerme = $_GET['idAchat'];
+                    achatFerme($db, $idFerme);
+                }
+            }
             elseif($_GET['action'] === 'fournisseurs')
             {
                 if(empty($_SESSION['username'])){

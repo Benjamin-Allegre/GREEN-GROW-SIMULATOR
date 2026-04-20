@@ -33,30 +33,48 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                 
-                    <?php foreach($fermes as $ferme): 
-                            if($ferme->type() === 'Extérieur'){ ?>
-                                <div class="card p-3 text-center">
-                                    <h5><?=  $ferme->nom() ?></h5>
-                                    <div class="row">
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-6">
-                                            <img src="images/cultureExterieur/<?= $ferme->id()  ?>.png" alt="<?=  $ferme->nom() ?>" width="250" height="150">
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                    </div>
-                                    
+                <div class="row g-3">
+                    <?php foreach($fermes as $ferme): ?>
+                        
+                        <?php if($ferme->type() === 'Extérieur'): ?>
 
-                                    <p><?=  $ferme->description() ?></p>
-                                    <?php if($user->money() < $ferme->prix()){ ?>
-                                        <a href="" class="btn btn-success btn-sm disabled">Il vous manque pour acheter cette ferme <?= $ferme->prix() - $user->money() ?> GC</a>
-                                    <?php }else{ ?>
-                                        <a href="" class="btn btn-success btn-sm">Acheter pour <?=  $ferme->prix() ?></a>
-                                    <?php } ?>
-                                    
+                            <div class="col-12 col-md-6 col-lg-4">
+
+                                <div class="card p-3 text-center h-100">
+
+                                    <h5><?= $ferme->nom() ?></h5>
+
+                                    <img 
+                                        src="images/cultureExterieur/<?= $ferme->id() ?>.png" 
+                                        alt="<?= $ferme->nom() ?>" 
+                                        class="img-fluid mx-auto d-block"
+                                        style="max-height:150px; object-fit:contain;"
+                                    >
+
+                                    <p><?= $ferme->description() ?></p>
+
+                                    <?php if($user->money() < $ferme->prix()): ?>
+
+                                        <button class="btn btn-success btn-sm disabled">
+                                            Il vous manque <?= $ferme->prix() - $user->money() ?> GC
+                                        </button>
+
+                                    <?php else: ?>
+
+                                        <a href="index.php?action=achatFerme&idAchat=<?= $ferme->id() ?>" 
+                                        class="btn btn-success btn-sm">
+                                            Acheter pour <?= $ferme->prix() ?> GC
+                                        </a>
+
+                                    <?php endif; ?>
+
                                 </div>
-                        <?php  }
-                        endforeach; ?>
-                
+
+                            </div>
+
+                        <?php endif; ?>
+
+                    <?php endforeach; ?>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                 <?php foreach($fermes as $ferme): 

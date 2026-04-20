@@ -18,6 +18,13 @@
 
             return $allfermes;
         }
+        public function getFerme($id){
+            $q = $this->db->prepare('SELECT * FROM fermes WHERE id = :id');
+            $q->execute([':id' => $id]);
+
+            return new Fermes($q-> fetch(PDO::FETCH_ASSOC));
+        }
+        
     }
 
 ?>

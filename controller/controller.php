@@ -50,6 +50,17 @@
 
         require_once('views/online/immobilier.php');
     }
+    function achatFerme($db, $idFerme)
+    {
+        $accountsManager = new AccountsManager($db);
+        $fermesManager = new FermesManager($db);
+        $usersFermesManager = new UsersFermesManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        $ferme = $fermesManager->getFerme($idFerme);
+
+        require_once('views/online/achatFerme.php');
+    }
     function fournisseurs($db)
     {
         $accountsManager = new AccountsManager($db);
@@ -66,6 +77,13 @@
         // $grainesAero = $grainesAeroManager->getAll();
 
         require_once('views/online/fournisseurs.php');
+    }
+    function fermes($db)
+    {
+
+    }
+    function fabriques($db){
+        
     }
     function quest($db)
     {
