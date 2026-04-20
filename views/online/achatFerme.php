@@ -35,24 +35,24 @@
                 <label for="pays">Choisissez un pays :</label>
                 <?php if (!empty($paysDisponibles)) { ?>
 
-    <select id="pays" name="pays">
-        <?php foreach($paysDisponibles as $p): ?>
-            <option value="<?= $p->id() ?>">
-                <?= $p->nom() ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
+                <select id="pays" name="pays">
+                    <?php foreach($paysDisponibles as $p): ?>
+                        <option value="<?= $p->id() ?>">
+                            <?= $p->nom() ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
 
-<?php } else { ?>
+            <?php } else { ?>
 
-    <p style="color:red;">
-        Vous devez d'abord acheter le niveau précédent pour débloquer cette exploitation.
-    </p>
+                <p style="color:red;">
+                    Vous devez d'abord acheter le niveau précédent pour débloquer cette exploitation.
+                </p>
 
-<?php } ?>
-        
-			</form>
-			<button form="acheterFerme" type="submit" class="btn button">Acheter</button>
+            <?php } ?>
+                
+            </form>
+            <button form="acheterFerme" type="submit" class="btn btn-success btn-sm">Acheter</button>
         </div>
         <div class="col-md-3"></div>
     </div>

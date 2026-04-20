@@ -36,7 +36,7 @@
                 <div class="row g-3">
                     <?php foreach($fermes as $ferme): ?>
                         
-                        <?php if($ferme->type() === 'Extérieur'): ?>
+                        <?php if($ferme->type_id() === 1): ?>
 
                             <div class="col-12 col-md-6 col-lg-4">
 

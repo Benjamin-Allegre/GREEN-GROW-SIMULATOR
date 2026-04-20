@@ -1,6 +1,6 @@
 <?php
     class Fermes {
-        protected $id, $nom, $description, $niveau, $type, $capacite, $prix;
+        protected $id, $nom, $description, $niveau, $type_id, $capacite, $prix;
 
         public function __construct(array $donnees)
         {
@@ -29,7 +29,7 @@
         public function nom(){ return $this->nom; }
         public function description(){ return $this->description; }
         public function niveau(){ return $this->niveau; }
-        public function type(){ return $this->type; }
+        public function type_id(){ return $this->type_id; }
         public function capacite(){ return $this->capacite; }
         public function prix(){ return $this->prix; }
 
@@ -59,15 +59,10 @@
             $niveau = (int) $niveau;
             $this->niveau = $niveau;
         }
-        public function setType($type)
+        public function setTypeId($type_id)
         {
-            if(is_string($type))
-            {
-                if($type === 'Extérieur' || $type === 'Intérieur' || $type === 'Hydro' || $type === 'Aéro')
-                {
-                    $this->type = $type;
-                }
-            }
+            $type_id = (int) $type_id;
+            $this->type_id = $type_id;
         }
         public function setCapacite($capacite)
         {

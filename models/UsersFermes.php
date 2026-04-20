@@ -1,6 +1,6 @@
 <?php
     class UsersFermes{
-        protected $id, $user_id, $pays_id, $ferme_id, $niveau, $type, $created_at;
+        protected $id, $user_id, $pays_id, $ferme_id, $niveau, $type_id, $created_at;
 
         public function __construct(array $donnees)
         {
@@ -30,7 +30,7 @@
         public function pays_id(){ return $this->pays_id; }
         public function ferme_id(){ return $this->ferme_id; }
         public function niveau(){ return $this->niveau; }
-        public function type(){ return $this->type; }
+        public function type_id(){ return $this->type_id; }
         public function created_at(){ return $this->created_at; }
 
         //setter
@@ -60,15 +60,11 @@
             $niveau = (int) $niveau;
             $this->niveau = $niveau;
         }
-        public function setType($type)
+        public function setTypeId($type_id)
         {
-            if(is_string($type))
-            {
-                if($type === 'Extérieur' || $type === 'Intérieur' || $type === 'Hydro' || $type === 'Aéro')
-                {
-                    $this->type = $type;
-                }
-            }
+            $type_id = (int) $type_id;
+            $this->type_id = $type_id;
+
         }
         public function setCreatedAt($created_at)
         {

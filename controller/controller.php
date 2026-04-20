@@ -69,7 +69,7 @@
             $maxNiveau = $usersFermesManager->getMaxNiveauByPays(
                 $user->id(), 
                 $p->id(), 
-                'Extérieur'
+                $ferme->type_id()
             );
 
             // 👉 CAS NIVEAU 1

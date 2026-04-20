@@ -53,7 +53,7 @@
                                             <h5><?= $graineExt->nom() ?></h5>
 
                                             <img 
-                                                src="images/cultureExterieur/<?= $graineExt->id() ?>.png" 
+                                                src="images/graines/exterieur/0.png" 
                                                 alt="<?= $graineExt->nom() ?>" 
                                                 class="img-fluid mx-auto d-block"
                                                 style="max-height:150px; object-fit:contain;"

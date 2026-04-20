@@ -6,20 +6,20 @@
             $this->db = $db;
         }
 
-        public function getMaxNiveauByPays($userId, $paysId, $type)
+        public function getMaxNiveauByPays($userId, $paysId, $typeId)
         {
             $q = $this->db->prepare('
                 SELECT MAX(niveau) as max_niveau 
                 FROM user_fermes 
                 WHERE user_id = :userId 
                 AND pays_id = :paysId
-                AND type = :type
+                AND type_id = :typeId
             ');
 
             $q->execute([
                 ':userId' => $userId,
                 ':paysId' => $paysId,
-                ':type'  => $type
+                ':typeId'  => $typeId
             ]);
 
             return $q->fetchColumn(); // retourne null si rien

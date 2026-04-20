@@ -9,7 +9,7 @@
         public function getAllFerme()
         {
             $allfermes = [];
-            $q = $this->db->prepare('SELECT id, nom, description, type, capacite, prix FROM fermes');
+            $q = $this->db->prepare('SELECT id, nom, description, type_id, capacite, prix FROM fermes');
             $q->execute();
 
             while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
