@@ -1,6 +1,6 @@
 <?php
     class UsersFermes{
-        protected $id, $user_id, $pays_id, $ferme_id, $type, $created_at;
+        protected $id, $user_id, $pays_id, $ferme_id, $niveau, $type, $created_at;
 
         public function __construct(array $donnees)
         {
@@ -29,6 +29,7 @@
         public function user_id(){ return $this->user_id; }
         public function pays_id(){ return $this->pays_id; }
         public function ferme_id(){ return $this->ferme_id; }
+        public function niveau(){ return $this->niveau; }
         public function type(){ return $this->type; }
         public function created_at(){ return $this->created_at; }
 
@@ -53,6 +54,11 @@
         {
             $ferme_id = (int) $ferme_id;
             $this->ferme_id = $ferme_id;
+        }
+        public function setNiveau($niveau)
+        {
+            $niveau = (int) $niveau;
+            $this->niveau = $niveau;
         }
         public function setType($type)
         {

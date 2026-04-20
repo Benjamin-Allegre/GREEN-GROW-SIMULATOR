@@ -33,14 +33,23 @@
             </div>
             <form id="acheterFerme" action="php/" method="POST">
                 <label for="pays">Choisissez un pays :</label>
-                <select id="pays" name="pays">
-                    <?php foreach($pays as $p): 
-                                ?>
-                            <option value="<?= $pays->id() ?>"><?= $pays->nom() ?></option>
-                    <?php endforeach; ?>
-                
-                </select>
-				
+                <?php if (!empty($paysDisponibles)) { ?>
+
+    <select id="pays" name="pays">
+        <?php foreach($paysDisponibles as $p): ?>
+            <option value="<?= $p->id() ?>">
+                <?= $p->nom() ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+<?php } else { ?>
+
+    <p style="color:red;">
+        Vous devez d'abord acheter le niveau précédent pour débloquer cette exploitation.
+    </p>
+
+<?php } ?>
         
 			</form>
 			<button form="acheterFerme" type="submit" class="btn button">Acheter</button>

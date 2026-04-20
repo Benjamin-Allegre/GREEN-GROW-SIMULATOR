@@ -1,6 +1,6 @@
 <?php
     class Fermes {
-        protected $id, $nom, $description, $type, $capacite, $prix;
+        protected $id, $nom, $description, $niveau, $type, $capacite, $prix;
 
         public function __construct(array $donnees)
         {
@@ -28,6 +28,7 @@
         public function id(){ return $this->id; }
         public function nom(){ return $this->nom; }
         public function description(){ return $this->description; }
+        public function niveau(){ return $this->niveau; }
         public function type(){ return $this->type; }
         public function capacite(){ return $this->capacite; }
         public function prix(){ return $this->prix; }
@@ -52,6 +53,11 @@
             {
                 $this->description = $description;
             }
+        }
+        public function setNiveau($niveau)
+        {
+            $niveau = (int) $niveau;
+            $this->niveau = $niveau;
         }
         public function setType($type)
         {

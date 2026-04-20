@@ -63,8 +63,30 @@
         $user = $accountsManager->getAccount($_SESSION['id']);
         $ferme = $fermesManager->getFerme($idFerme);
         $pays = $paysManager->getAllPays();
-        $usersFermes = $usersFermesManager->getAllUsersFermes($_SESSION['id']);
-        var_dump($usersFermes);
+        $paysDisponibles = [];
+        foreach($pays as $p): 
+
+            $maxNiveau = $usersFermesManager->getMaxNiveauByPays(
+                $user->id(), 
+                $p->id(), 
+                'Extérieur'
+            );
+
+            // 👉 CAS NIVEAU 1
+            if ($ferme->niveau() == 1) {
+                if ($maxNiveau == null) {
+                    $paysDisponibles[] = $p;
+                }
+            }
+
+            // 👉 CAS NIVEAU 2+
+            else {
+                if ($maxNiveau == $ferme->niveau() - 1) {
+                    $paysDisponibles[] = $p;
+                }
+            }
+
+        endforeach;
 
         require_once('views/online/achatFerme.php');
     }
