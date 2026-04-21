@@ -13,9 +13,6 @@
 
             return $q->fetchColumn() == 0;
         }
-        
-        
-
         public function addAccount(Accounts $user)
         {
             $q = $this->db->prepare('
@@ -63,6 +60,14 @@
                 ':marque' => $marque,
                 ':id' => $id
             ]);
+        }
+        public function updateMoney($userId, $money)
+        {
+            $q = $this->db->prepare("UPDATE users SET money = :money WHERE id = :id");
+            $q->execute([
+                ':money' => $money,
+                ':id' => $userId
+            ]); 
         }
     }
 ?>

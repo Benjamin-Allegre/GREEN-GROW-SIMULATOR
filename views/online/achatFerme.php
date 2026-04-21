@@ -31,7 +31,10 @@
                 <p class="card-text"><?= $ferme->description() ?></p>
                 <p class="card-text"><?= $ferme->prix() ?>  Green Coin</p>
             </div>
-            <form id="acheterFerme" action="php/" method="POST">
+            <form id="acheterFerme" action="php/actions/acheter/acheterFermeExtAction.php" method="POST">
+
+                <input type="hidden" value="<?= $ferme->id() ?>" name="fermeId" id="fermeId" />
+
                 <label for="pays">Choisissez un pays :</label>
                 <?php if (!empty($paysDisponibles)) { ?>
 
@@ -53,6 +56,11 @@
                 
             </form>
             <button form="acheterFerme" type="submit" class="btn btn-success btn-sm">Acheter</button>
+            <div class="text-danger text-center">
+                <?php if(isset($_GET['err'])){ ?> 
+                    <p><?= $_GET['err'] ?></p>
+                <?php } ?>
+            </div>
         </div>
         <div class="col-md-3"></div>
     </div>

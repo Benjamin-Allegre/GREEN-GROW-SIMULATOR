@@ -24,6 +24,19 @@
 
             return $q->fetchColumn(); // retourne null si rien
         }
+        public function verifFermePays($userId, $paysId)
+        {
+            $q = $this->db->prepare('SELECT COUNT(*) FROM user_fermes WHERE user_id = :userId AND pays_id = :paysId');
+            $q->execute([':userId' => $userId, ':paysId' => $paysId]);
+
+            return $q->fetchColumn();
+        }
+        public function getUsersFermePays($userId, $paysId){
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND pays_id = :paysId');
+            $q->execute([':userId' => $userId, ':paysId' => $paysId]);
+
+            return new UsersFermes($q-> fetch(PDO::FETCH_ASSOC));
+        }
         public function getAllUsersFermes($userId){
             $allUsersFermes = [];
             $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId');
@@ -34,6 +47,27 @@
             }
 
             return $allUsersFermes;
+        }
+        public function addUserFerme(UsersFermes $addUserFerme)
+        {
+            $q = $this->db->prepare('INSERT INTO user_fermes(pays_id, user_id, ferme_id, niveau, type_id) VALUES (:paysId, :userId, :fermeId, :niveau, :typeId)');
+
+            $q->bindvalue(':paysId', $addUserFerme->pays_id());
+            $q->bindvalue(':userId', $addUserFerme->user_id());
+            $q->bindvalue(':fermeId', $addUserFerme->ferme_id());
+            $q->bindvalue(':niveau', $addUserFerme->niveau());
+            $q->bindvalue(':typeId', $addUserFerme->type_id());
+
+            $q->execute();
+
+            $addUserFerme->hydrate([
+                'id' => $this->db->lastInsertId()
+            ]);
+
+        }
+        public function updateUserFerme(UsersFermes $userFerme){
+            $q = $this->db->prepare('UPDATE user_fermes SET ferme_id = :fermeId, niveau = :niveau WHERE id = :id');
+            $q->execute([':fermeId' => $userFerme->ferme_id() + 1, ':niveau' => $userFerme->niveau() + 1, ':id' => $userFerme->id()]); 
         }
     }
 

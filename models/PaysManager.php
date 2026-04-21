@@ -17,6 +17,13 @@
             }
             return $allPays;
         }
+
+        public function getPays($id){
+            $q = $this->db->prepare('SELECT * FROM pays WHERE id = :id');
+            $q->execute([':id' => $id]);
+
+            return new Pays($q-> fetch(PDO::FETCH_ASSOC));
+        }
     }
 
 ?>
