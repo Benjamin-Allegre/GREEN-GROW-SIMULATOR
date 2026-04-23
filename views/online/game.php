@@ -85,16 +85,16 @@
         </div>
     </div>
     <!-- MODULES FUTURS -->
-    <div class="row g-3">
+    <div class="row g-3 text-center">
         <h5>🌾 Exploitations</h5>
-        <div class="col-md-12">
+        <div class="col-md-12 ">
             <?php if(isset($_GET['achatFerme'])){ ?>
                     <p class="text-success"><?= $_GET['achatFerme'] ?></p>
             <?php } ?>
         </div>
         <div class="col-md-3">
             <div class="card p-3">
-                <h5>🌾 culture Extérieur</h5>
+                <h5>🌾 Culture Extérieur</h5>
                 <p>Gère tes fermes cannabicole extérieur</p>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
@@ -102,7 +102,7 @@
 
         <div class="col-md-3">
             <div class="card p-3">
-                <h5>🌾 culture Intérieur</h5>
+                <h5>🌾 Culture Intérieur</h5>
                 <p>Achete graines et matériel.</p>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
@@ -110,14 +110,14 @@
 
         <div class="col-md-3">
             <div class="card p-3">
-                <h5>📊 Marché</h5>
+                <h5>🌾Culture Hydropinique</h5>
                 <p>Vends tes récoltes.</p>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card p-3">
-                <h5>📊 Marché</h5>
+                <h5>🌾 Culture Aéroponique</h5>
                 <p>Vends tes récoltes.</p>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>

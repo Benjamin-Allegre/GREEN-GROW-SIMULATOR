@@ -55,7 +55,8 @@
             <?php } ?>
                 
             </form>
-            <button form="acheterFerme" type="submit" class="btn btn-success btn-sm">Acheter</button>
+            <button form="acheterFerme" type="submit" class="btn btn-success btn-sm mb-2">Acheter</button>
+            <a href="index.php?action=immmobilier" class="btn btn-success btn-sm">Retour</a>
             <div class="text-danger text-center">
                 <?php if(isset($_GET['err'])){ ?> 
                     <p><?= $_GET['err'] ?></p>
