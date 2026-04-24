@@ -95,7 +95,32 @@
         <div class="col-md-3">
             <div class="card p-3">
                 <h5>🌾 Culture Extérieur</h5>
-                <p>Gère tes fermes cannabicole extérieur</p>
+                <p>Fermes cannabicole extérieur</p>
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pays</th>
+                                <th scope="col">Niveau</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <?php if(isset($userFermesExt)){ 
+                                foreach($userFermesExt as $userFermeExt) :?>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                    <?php       endforeach; 
+                           }else{ ?>
+                                <tr>
+                                    <td colspan="3">Aucune fermes</td>
+                                </tr>
+                                
+                    <?php  } ?>
+                            </tbody>
+                        </table>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
@@ -103,7 +128,32 @@
         <div class="col-md-3">
             <div class="card p-3">
                 <h5>🌾 Culture Intérieur</h5>
-                <p>Achete graines et matériel.</p>
+                <p>Fermes cannabicole intérieur</p>
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pays</th>
+                                <th scope="col">Niveau</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <?php if(isset($userFermesInt)){ 
+                                foreach($userFermesInt as $userFermeInt) :?>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                    <?php       endforeach; 
+                           }else{ ?>
+                                <tr>
+                                    <td colspan="3">Aucune fermes</td>
+                                </tr>
+                                
+                    <?php  } ?>
+                            </tbody>
+                        </table>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
@@ -111,14 +161,64 @@
         <div class="col-md-3">
             <div class="card p-3">
                 <h5>🌾Culture Hydropinique</h5>
-                <p>Vends tes récoltes.</p>
+                <p>Fermes cannabicole Hydro</p>
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pays</th>
+                                <th scope="col">Niveau</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <?php if(isset($userFermesHydro)){ 
+                                foreach($userFermesHydro as $userFermeHydro) :?>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                    <?php       endforeach; 
+                           }else{ ?>
+                                <tr>
+                                    <td colspan="3">Aucune fermes</td>
+                                </tr>
+                                
+                    <?php  } ?>
+                            </tbody>
+                        </table>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card p-3">
                 <h5>🌾 Culture Aéroponique</h5>
-                <p>Vends tes récoltes.</p>
+                <p>Fermes cannabicole aéro</p>
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pays</th>
+                                <th scope="col">Niveau</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <?php if(isset($userFermesAero)){ 
+                                foreach($userFermesAero as $userFermeAero) :?>
+                                    <tr>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                    <?php       endforeach; 
+                           }else{ ?>
+                                <tr>
+                                    <td colspan="3">Aucune fermes</td>
+                                </tr>
+                                
+                    <?php  } ?>
+                            </tbody>
+                        </table>
                 <a href="" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
