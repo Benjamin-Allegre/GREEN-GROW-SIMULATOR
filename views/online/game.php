@@ -122,7 +122,7 @@
                     <?php  } ?>
                             </tbody>
                         </table>
-                <a href="index.php?action=allFermeExt" class="btn btn-success btn-sm">Accéder</a>
+                <a href="index.php?action=allFermesExt" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
 
@@ -157,7 +157,7 @@
                     <?php  } ?>
                             </tbody>
                         </table>
-                <a href="index.php?action=allFermeInt" class="btn btn-success btn-sm">Accéder</a>
+                <a href="index.php?action=allFermesInt" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
 
@@ -190,7 +190,7 @@
                     <?php  } ?>
                             </tbody>
                         </table>
-                <a href="index.php?action=allFermeHydro" class="btn btn-success btn-sm">Accéder</a>
+                <a href="index.php?action=allFermesHydro" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
         <div class="col-md-3">
@@ -222,7 +222,7 @@
                     <?php  } ?>
                             </tbody>
                         </table>
-                <a href="index.php?action=allFermeAero" class="btn btn-success btn-sm">Accéder</a>
+                <a href="index.php?action=allFermesAero" class="btn btn-success btn-sm">Accéder</a>
             </div>
         </div>
     </div>

@@ -64,6 +64,38 @@
                     fournisseurs($db);
                 }
             }
+             elseif($_GET['action'] === 'allFermesExt')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    allfermesExt($db);
+                }
+            }
+            elseif($_GET['action'] === 'allFermesInt')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    
+                }
+            }
+            elseif($_GET['action'] === 'allFermesHydro')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    
+                }
+            }
+            elseif($_GET['action'] === 'allFermesAero')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    
+                }
+            }
             elseif($_GET['action'] === 'quest') // ✅ AJOUT IMPORTANT
             {
                 if(empty($_SESSION['username'])){

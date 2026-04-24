@@ -112,9 +112,36 @@
 
         require_once('views/online/fournisseurs.php');
     }
-    function fermes($db)
+    function allfermesExt($db)
     {
+        $accountsManager = new AccountsManager($db);
 
+        $user = $accountsManager->getAccount($_SESSION['id']);
+
+        require_once('views/online/allFermesExt.php');
+    }
+    function allfermesInt($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        require_once('views/online/allFermesInt.php');
+    }
+    function allfermesHydro($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+
+        require_once('views/online/allFermesHydro.php');
+    }
+    function allfermesAero($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+        
+        require_once('views/online/allFermesAero.php');
     }
     function fabriques($db){
         
