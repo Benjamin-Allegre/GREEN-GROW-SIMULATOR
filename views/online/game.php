@@ -105,12 +105,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                    <?php if(isset($userFermesExt)){ 
-                                foreach($userFermesExt as $userFermeExt) :?>
+                    <?php if(!empty($userFermesExt)){ 
+                                foreach($userFermesExt as $userFermeExt) :
+                                 $pays = $paysManager->getPays($userFermeExt->pays_id());?>
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td><?= $pays->nom() ?></td>
+                                        <td><?= $userFermeExt->niveau() ?></td>
+                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -138,12 +139,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                    <?php if(isset($userFermesInt)){ 
-                                foreach($userFermesInt as $userFermeInt) :?>
+                    <?php if(!empty($userFermesInt)){ 
+                                foreach($userFermesInt as $userFermeInt) : 
+                                $pays = $paysManager->getPays($userFermeInt->pays_id()); ?>
+
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td><?= $pays->nom() ?></td>
+                                        <td><?= $userFermeInt->niveau() ?></td>
+                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -171,7 +174,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                    <?php if(isset($userFermesHydro)){ 
+                    <?php if(!empty($userFermesHydro)){ 
                                 foreach($userFermesHydro as $userFermeHydro) :?>
                                     <tr>
                                         <td>Mark</td>
@@ -203,7 +206,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                    <?php if(isset($userFermesAero)){ 
+                    <?php if(!empty($userFermesAero)){ 
                                 foreach($userFermesAero as $userFermeAero) :?>
                                     <tr>
                                         <td>Mark</td>

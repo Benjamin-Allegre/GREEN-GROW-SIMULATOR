@@ -48,6 +48,50 @@
 
             return $allUsersFermes;
         }
+        public function getUserFermesExt($userId){
+            $userFermesExt = [];
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND type_id = 1');
+            $q->execute([':userId' => $userId]);
+
+            while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+                $userFermesExt[] = new UsersFermes($donnees);
+            }
+
+            return $userFermesExt;
+        }
+        public function getUserFermesInt($userId){
+            $userFermesInt = [];
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND type_id = 2');
+            $q->execute([':userId' => $userId]);
+
+            while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+                $userFermesInt[] = new UsersFermes($donnees);
+            }
+
+            return $userFermesInt;
+        }
+        public function getUserFermesHydro($userId){
+            $userFermesHydro = [];
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND type_id = 3');
+            $q->execute([':userId' => $userId]);
+
+            while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+                $userFermesHydro[] = new UsersFermes($donnees);
+            }
+
+            return $userFermesHydro;
+        }
+        public function getUserFermesAero($userId){
+            $userFermesAero = [];
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND type_id = 4');
+            $q->execute([':userId' => $userId]);
+
+            while($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+                $userFermesAero[] = new UsersFermes($donnees);
+            }
+
+            return $userFermesAero;
+        }
         public function addUserFerme(UsersFermes $addUserFerme)
         {
             $q = $this->db->prepare('INSERT INTO user_fermes(pays_id, user_id, ferme_id, niveau, type_id) VALUES (:paysId, :userId, :fermeId, :niveau, :typeId)');

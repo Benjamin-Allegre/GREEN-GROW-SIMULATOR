@@ -33,11 +33,19 @@
         $accountsManager = new AccountsManager($db);
         $usersQuestsManager = new UsersQuestsManager($db);
         $usersSuccessManager = new UsersSuccessManager($db);
+        $usersFermesManager = new UsersFermesManager($db);
+        $paysManager = new PaysManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
         $questsActive = $usersQuestsManager->getAllQuestsActive($_SESSION['id']);
         $successActive = $usersSuccessManager->getAllSuccessActive($_SESSION['id']);
 
+        // ferme INT EXT HYDRO AERO
+        $userFermesExt = $usersFermesManager->getUserFermesExt($_SESSION['id']);
+        $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
+        $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
+        $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
+    var_dump($userFermesInt);
         require_once('views/online/game.php');
     }
     function immobilier($db)
