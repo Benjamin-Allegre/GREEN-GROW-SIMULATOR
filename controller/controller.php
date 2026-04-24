@@ -45,7 +45,7 @@
         $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
         $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
         $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
-    var_dump($userFermesInt);
+
         require_once('views/online/game.php');
     }
     function immobilier($db)
@@ -55,9 +55,6 @@
 
         $user = $accountsManager->getAccount($_SESSION['id']);
         $fermes = $fermesManager->getAllFerme();
-        
-
-        
 
         require_once('views/online/immobilier.php');
     }

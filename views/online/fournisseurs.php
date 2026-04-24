@@ -80,14 +80,55 @@
                                     </div>
 
                                 <?php endforeach; ?>
-</div>
+                                </div>
                                 
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="1">
+                                 <div class="row g-3">
+                                <?php foreach($grainesInt as $graineInt): ?>
+                                    
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        
+                                        <div class="card p-3 text-center h-100">
+
+                                            <h5><?= $graineInt->nom() ?></h5>
+
+                                            <img 
+                                                src="images/graines/interieur/0.png" 
+                                                alt="<?= $graineInt->nom() ?>" 
+                                                class="img-fluid mx-auto d-block"
+                                                style="max-height:150px; object-fit:contain;"
+                                            >
+
+                                            <p><?= $graineInt->description() ?></p>
+
+                                            <?php if($user->money() < $graineInt->prix()): ?>
+                                                
+                                                <a href="#" class="btn btn-success btn-sm disabled">
+                                                    Il vous manque <?= $graineInt->prix() - $user->money() ?> GC
+                                                </a>
+
+                                            <?php else: ?>
+
+                                                <a href="#" class="btn btn-success btn-sm">
+                                                    Acheter pour <?= $graineInt->prix() ?> GC
+                                                </a>
+
+                                            <?php endif; ?>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php endforeach; ?>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="1">
                                 
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="1">...</div>
-                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="1">...</div>
+                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="1">
+                                
+                            </div>
                         </div>
                     </div>
                    
