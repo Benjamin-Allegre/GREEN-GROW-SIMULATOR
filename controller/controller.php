@@ -127,6 +127,14 @@
 
         require_once('views/online/allFermesExt.php');
     }
+    function bureauFermeExt($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+
+        require_once('views/online/bureauFermeExt.php');
+    }
     function allFermesInt($db)
     {
         $accountsManager = new AccountsManager($db);

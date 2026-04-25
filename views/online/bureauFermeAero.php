@@ -1,0 +1,34 @@
+<?php
+    $title = 'Bureau ferme';
+    $content_css = '';
+    $content_js = '';
+?>
+
+<!-- démarre la temporisation de sortie. Tant qu'elle est enclenchée,
+    aucune donnée, hormis les en-têtes, n'est envoyée au navigateur,
+    mais temporairement mise en tampon. -->
+<?php ob_start(); ?>
+
+<div class="container mt-4">
+
+    <!-- HEADER PLAYER INFO -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>🌱 Siège social</h2>
+
+        <div class="badge bg-success fs-6">
+            💰 <?= $user->money() ?? 0 ?> GC
+        </div>
+
+    </div>
+    
+   
+
+</div>
+
+<!-- Lit le contenu courant du tampon de sortie puis l'efface -->
+<?php $content = ob_get_clean(); ?>
+
+<script src="js/quests.js"></script>
+<!-- require (template générale site) -->
+<?php require_once('templates/template.php'); ?>

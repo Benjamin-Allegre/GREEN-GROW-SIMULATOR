@@ -72,6 +72,14 @@
                     allFermesExt($db);
                 }
             }
+            elseif($_GET['action'] === 'bureauFermeExt')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    bureauFermeExt($db);
+                }
+            }
             elseif($_GET['action'] === 'allFermesInt')
             {
                 if(empty($_SESSION['username'])){

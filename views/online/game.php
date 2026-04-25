@@ -111,7 +111,7 @@
                                     <tr>
                                         <td><?= $pays->nom() ?></td>
                                         <td><?= $userFermeExt->niveau() ?></td>
-                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
+                                        <td><a href="index.php?action=bureauFermeExt&fermeId=<?= $userFermeExt->id() ?>" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -146,7 +146,7 @@
                                     <tr>
                                         <td><?= $pays->nom() ?></td>
                                         <td><?= $userFermeInt->niveau() ?></td>
-                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
+                                        <td><a href="index.php?action=bureauFermeInt&fermeId=<?= $userFermeInt->id() ?>" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -179,7 +179,7 @@
                                     <tr>
                                         <td><?= $pays->nom() ?></td>
                                         <td><?= $userFermeHydro->niveau() ?></td>
-                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
+                                        <td><a href="index.php?action=bureauFermeHydro&fermeId=<?= $userFermeHydro->id() ?>" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -211,7 +211,7 @@
                                     <tr>
                                         <td><?= $pays->nom() ?></td>
                                         <td><?= $userFermeAero->niveau() ?></td>
-                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
+                                        <td><a href="index.php?action=bureauFermeAero&fermeId=<?= $userFermeAero->id() ?>" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
