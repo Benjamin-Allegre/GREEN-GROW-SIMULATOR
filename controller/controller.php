@@ -112,35 +112,64 @@
 
         require_once('views/online/fournisseurs.php');
     }
-    function allfermesExt($db)
+    function allFermesExt($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersFermesManager = new UsersFermesManager($db); 
+        $paysManager = new PaysManager($db);
+        $fermesManager = new FermesManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
+        $userFermesExt = $usersFermesManager->getUserFermesExt($_SESSION['id']);
+        $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
+        $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
+        $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
 
         require_once('views/online/allFermesExt.php');
     }
-    function allfermesInt($db)
+    function allFermesInt($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersFermesManager = new UsersFermesManager($db); 
+        $paysManager = new PaysManager($db);
+        $fermesManager = new FermesManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
+        $userFermesExt = $usersFermesManager->getUserFermesExt($_SESSION['id']);
+        $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
+        $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
+        $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
+        
         require_once('views/online/allFermesInt.php');
     }
-    function allfermesHydro($db)
+    function allFermesHydro($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersFermesManager = new UsersFermesManager($db); 
+        $paysManager = new PaysManager($db);
+        $fermesManager = new FermesManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
+        $userFermesExt = $usersFermesManager->getUserFermesExt($_SESSION['id']);
+        $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
+        $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
+        $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
 
         require_once('views/online/allFermesHydro.php');
     }
-    function allfermesAero($db)
+    function allFermesAero($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersFermesManager = new UsersFermesManager($db); 
+        $paysManager = new PaysManager($db);
+        $fermesManager = new FermesManager($db);
 
         $user = $accountsManager->getAccount($_SESSION['id']);
-        
+        $userFermesExt = $usersFermesManager->getUserFermesExt($_SESSION['id']);
+        $userFermesInt = $usersFermesManager->getUserFermesInt($_SESSION['id']);
+        $userFermesHydro = $usersFermesManager->getUserFermesHydro($_SESSION['id']);
+        $userFermesAero = $usersFermesManager->getUserFermesAero($_SESSION['id']);
+
         require_once('views/online/allFermesAero.php');
     }
     function fabriques($db){

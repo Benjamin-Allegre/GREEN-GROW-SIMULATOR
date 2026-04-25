@@ -1,5 +1,5 @@
 <?php
-    $title = 'Game';
+    $title = 'Siège social';
     $content_css = '';
     $content_js = '';
 ?>
@@ -14,7 +14,7 @@
     <!-- HEADER PLAYER INFO -->
     <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <h2>🌱 Game Hub</h2>
+        <h2>🌱 Siège social</h2>
 
         <div class="badge bg-success fs-6">
             💰 <?= $user->money() ?? 0 ?> GC
@@ -105,8 +105,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                    <?php if(!empty($userFermesExt)){ 
-                                foreach($userFermesExt as $userFermeExt) :
+                    <?php if(!empty($userFermesExt)){  
+                                foreach(array_slice($userFermesExt, 0, 5) as $userFermeExt) :
                                  $pays = $paysManager->getPays($userFermeExt->pays_id());?>
                                     <tr>
                                         <td><?= $pays->nom() ?></td>
@@ -140,7 +140,7 @@
                         </thead>
                         <tbody>
                     <?php if(!empty($userFermesInt)){ 
-                                foreach($userFermesInt as $userFermeInt) : 
+                                foreach(array_slice($userFermesInt, 0, 5) as $userFermeInt) : 
                                 $pays = $paysManager->getPays($userFermeInt->pays_id()); ?>
 
                                     <tr>
@@ -175,7 +175,7 @@
                         </thead>
                         <tbody>
                     <?php if(!empty($userFermesHydro)){ 
-                                foreach($userFermesHydro as $userFermeHydro) :?>
+                                foreach(array_slice($userFermesHydro, 0, 5) as $userFermeHydro) :?>
                                     <tr>
                                         <td>Mark</td>
                                         <td>Otto</td>
@@ -207,7 +207,7 @@
                         </thead>
                         <tbody>
                     <?php if(!empty($userFermesAero)){ 
-                                foreach($userFermesAero as $userFermeAero) :?>
+                                foreach(array_slice($userFermesAero, 0, 5) as $userFermeAero) :?>
                                     <tr>
                                         <td>Mark</td>
                                         <td>Otto</td>

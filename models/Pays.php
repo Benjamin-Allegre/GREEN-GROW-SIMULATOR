@@ -44,9 +44,8 @@
         }
         public function setPopulation($population)
         {
-            if(is_string($population)){
-                $this->population = $population;
-            }
+            $population = (int) $population;
+            $this->population = $population;
         }
     }
 

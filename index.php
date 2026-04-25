@@ -69,7 +69,7 @@
                 if(empty($_SESSION['username'])){
 					accueil();
 				}else{
-                    allfermesExt($db);
+                    allFermesExt($db);
                 }
             }
             elseif($_GET['action'] === 'allFermesInt')
@@ -77,7 +77,7 @@
                 if(empty($_SESSION['username'])){
 					accueil();
 				}else{
-                    
+                    allFermesInt($db);
                 }
             }
             elseif($_GET['action'] === 'allFermesHydro')
@@ -85,7 +85,7 @@
                 if(empty($_SESSION['username'])){
 					accueil();
 				}else{
-                    
+                    allFermesHydro($db);
                 }
             }
             elseif($_GET['action'] === 'allFermesAero')
@@ -93,7 +93,7 @@
                 if(empty($_SESSION['username'])){
 					accueil();
 				}else{
-                    
+                    allFermesAero($db);
                 }
             }
             elseif($_GET['action'] === 'quest') // ✅ AJOUT IMPORTANT
