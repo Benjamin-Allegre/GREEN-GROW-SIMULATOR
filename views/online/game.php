@@ -177,9 +177,9 @@
                     <?php if(!empty($userFermesHydro)){ 
                                 foreach(array_slice($userFermesHydro, 0, 5) as $userFermeHydro) :?>
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td><?= $pays->nom() ?></td>
+                                        <td><?= $userFermeHydro->niveau() ?></td>
+                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
@@ -209,9 +209,9 @@
                     <?php if(!empty($userFermesAero)){ 
                                 foreach(array_slice($userFermesAero, 0, 5) as $userFermeAero) :?>
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td><?= $pays->nom() ?></td>
+                                        <td><?= $userFermeAero->niveau() ?></td>
+                                        <td><a href="" class="btn btn-success btn-sm">GO</a></td>
                                     </tr>
                     <?php       endforeach; 
                            }else{ ?>
