@@ -39,6 +39,14 @@
                     game($db);
                 }
             }
+            elseif($_GET['action'] === 'banque')
+            {
+                if(empty($_SESSION['username'])){
+					accueil();
+				}else{
+                    banque($db);
+                }
+            }
             elseif($_GET['action'] === 'immobilier')
             {
                 if(empty($_SESSION['username'])){

@@ -48,6 +48,14 @@
 
         require_once('views/online/game.php');
     }
+    function banque($db)
+    {
+        $accountsManager = new AccountsManager($db);
+
+        $user = $accountsManager->getAccount($_SESSION['id']);
+
+        require_once('views/online/banque.php');
+    }
     function immobilier($db)
     {
         $accountsManager = new AccountsManager($db);
@@ -130,8 +138,13 @@
     function bureauFermeExt($db)
     {
         $accountsManager = new AccountsManager($db);
+        $usersFermesManager = new UsersFermesManager($db);
+        $usersEntrepotManager = new  UsersEntrepotManager($db);
+
 
         $user = $accountsManager->getAccount($_SESSION['id']);
+        $ferme = $usersFermesManager->getUserFerme($_SESSION['id'], $_GET['fermeId']);
+        var_dump($ferme);
 
         require_once('views/online/bureauFermeExt.php');
     }

@@ -37,6 +37,12 @@
 
             return new UsersFermes($q-> fetch(PDO::FETCH_ASSOC));
         }
+        public function getUserFerme($userId, $fermeId){
+            $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId AND id = :fermeId');
+            $q->execute([':userId' => $userId, ':fermeId' => $fermeId]);
+            
+            return new UsersFermes($q-> fetch(PDO::FETCH_ASSOC));
+        }
         public function getAllUsersFermes($userId){
             $allUsersFermes = [];
             $q = $this->db->prepare('SELECT * FROM user_fermes WHERE user_id = :userId');

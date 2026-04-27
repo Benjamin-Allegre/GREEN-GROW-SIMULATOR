@@ -14,7 +14,7 @@
     <!-- HEADER PLAYER INFO -->
     <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <h2>🌱 Siège social</h2>
+        <h2>🌱 ferme </h2>
 
         <div class="badge bg-success fs-6">
             💰 <?= $user->money() ?? 0 ?> GC
@@ -22,12 +22,14 @@
 
     </div>
 
-   <!-- MODULES FERMES -->
+
     <!-- MODULES FERMES -->
     <div class="row g-3">
         <div class="col-md-12">
             <!-- affichage des stock entrepot en fonction des besion de culture -->
             <h5>Stock entreprot</h5>
+            <h5>Réserve</h5>
+            <h5>Planter</h5>
         </div>
     </div>
     <div class="row g-3">
@@ -44,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                <?php if(!empty($userFermesAero)){ 
+                <?php if(!empty($userFermeExt)){ 
                         foreach($userFermesAero as $userFermeAero) :
                             $pays = $paysManager->getPays($userFermeAero->pays_id()); 
                             $ferme = $fermesManager->getFerme($userFermeAero->ferme_id()) ;?>
@@ -53,7 +55,7 @@
                                     <td><?=  $pays->population() ?></td>
                                     <td><?= $userFermeAero->niveau() ?></td>
                                     <td><?= $ferme->capacite() ?></td>
-                                    <td><a href="" class="btn btn-success btn-sm">GO</a></td>
+                                    <td><a href="index.php?action=bureauFermeInt&fermeId=<?= $userFermeInt->id() ?>" class="btn btn-success btn-sm">GO</a></td>
                                 </tr>
                 <?php   endforeach; 
                       }else{ ?>

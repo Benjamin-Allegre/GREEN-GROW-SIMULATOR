@@ -49,6 +49,9 @@
                                     <a class="nav-link" href="index.php?action=game">Bureau</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="index.php?action=banque">Banque</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="index.php?action=immobilier">Immobilier</a>
                                 </li>
 
